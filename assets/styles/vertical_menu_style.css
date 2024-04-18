@@ -1,0 +1,36 @@
+.vertical-menu {
+    margin: auto;
+    width: 500px;
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #5369f8;
+    background-color: #EBF7FE;
+}
+
+.vertical-menu a {
+    margin: auto;
+    display: block;
+    background-color: #EBF7FE;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border: 1px solid #5369f8;
+}
+
+.vertical-menu a:hover {
+    background-color: #5369f8;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

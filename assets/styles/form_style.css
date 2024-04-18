@@ -1,0 +1,166 @@
+input[type=text], select {
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,0.5);
+}
+
+td{
+    padding: 5px;
+}
+
+input[type=date], select {
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,0.6);
+    font-family: 'Montserrat';
+    font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+input[type=submit] {
+    background-color: #5369f8;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-family: 'Montserrat';
+}
+
+input[type=submit]:hover {
+    background-color: #5369f8;
+}
+
+form[name=add_employee_form] {
+    margin: auto;
+    width: 275px;
+    /* height: 235px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=add_program_form] {
+    margin: auto;
+    width: 275px;
+    /* height: 200px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=add_functional_area_form] {
+    margin: auto;
+    width: 275px;
+    /* height: 100px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=new_report_form] {
+    margin: 0 auto;
+    width: 1100px;
+    /* height: 100%; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=update_report_form] {
+    margin: 0 auto;
+    width: 1000px;
+    /* height: 100%; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=search_employees_form] {
+    margin: auto;
+    width: 300px;
+    /* height: 225px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=search_functional_areas_form] {
+    margin: auto;
+    width: 300px;
+    /* height: 100px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=edit_search_programs_form] {
+    margin: auto;
+    width: 325px;
+    /* height: 170px; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+form[name=search_reports_form] {
+    margin: 0 auto;
+    width: 350px;
+    /* height: 100%; */
+    border-radius: 5px;
+    background-color: #EBF7FE;
+    padding: 20px;
+    /* overflow: scroll; */
+}
+
+textarea {
+    resize: none;
+}
+
+.searchTable {
+    margin: 0 auto;
+}
+
+.button {
+    background-color: #5369f8;
+    color: white;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+}
+
+.button:hover {
+    background-color: #2f4afa;
+}
+
+
