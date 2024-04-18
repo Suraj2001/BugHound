@@ -18,16 +18,11 @@
     $sess_user_name = $_SESSION['user_name'];
     include "./navigation_bar.php";
     echo nav_bar($sess_user_name, $sess_user_level, "home");
+    include "./home_page.php";
+    echo homePage();
   } else {
     include "./authentication.php";
     echo authUser();
-  }
-  ?>
-  <?php
-  // Include the carousal component
-  include "./carousal_component.php";
-  if (isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
-    echo createCarousal();
   }
   ?>
 

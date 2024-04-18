@@ -1,7 +1,6 @@
 <?php
-function createCarousal()
+function homePage()
 {
-
   return '
     <div class="centerflipcards">
     <div class="square-flip">
