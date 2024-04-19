@@ -29,8 +29,12 @@
             echo '<font color="gray">Search for a Functional Area Entry</font>';
         }
         echo "</center></h2>";
-        echo   '
-        <form name="search_functional_areas_form" action="search_functional_areas_post.php?source=<?php echo $source; ?>" method="post" onsubmit="return validate(this)">
+    } else {
+        include "./authentication.php";
+        echo authUser();
+    }
+    ?>
+    <form name="search_functional_areas_form" action="search_functional_areas_post.php?source=<?php echo $source; ?>" method="post" onsubmit="return validate(this)">
             <table>
                 <tr>
                     <td>Program Name:</td><td><input type="Text" name="program_name" /></td>
@@ -41,16 +45,9 @@
             </table>
 
             <input type="submit" name="search_reports_submit" value="Search"/>
-            <input class="button" type="button" onclick="window.location.replace(\'search_functional_areas.php?source=<?php echo $source; ?>\')" value="Reset" />
-            <input class="button" type="button" onclick="window.location.replace(\'index.php\')" value="Cancel" />
+            <input class="button" type="button" onclick="window.location.replace('search_functional_areas.php?source=<?php echo $source; ?>')" value="Reset" />
+            <input class="button" type="button" onclick="window.location.replace('index.php')" value="Cancel" />
         </form>
-        ';
-    } else {
-        include "./authentication.php";
-        echo authUser();
-    }
-    ?>
-
     </script>
 </body>
 

@@ -6,6 +6,7 @@
     <title>Bughound</title>
     <link rel="stylesheet" href="../assets/styles/nav_menu_style.css">
     <link rel="stylesheet" href="../assets/styles/form_style.css">
+    <link rel="stylesheet" href="../assets/styles/table_style.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
@@ -35,9 +36,6 @@
     }
     ?>
 
-
-
-
     <h2>
         <!-- ADD YOUR DB INFO HERE -->
         <?php
@@ -48,17 +46,6 @@
         mysqli_select_db($conn, "bughound_db");
         ?>
     </h2>
-
-
-
-
-
-
-
-
-
-
-
 
     <?php
     $source = $_GET['source'];
@@ -71,44 +58,6 @@
         LEFT JOIN areas AS a ON b.area_id = a.area_id";
         $result = $conn->query($sql);
 
-        // Adding CSS for styling
-        echo "<style>
-        .table-container {
-            width: 95%;
-            margin: 20px auto;
-            overflow-x: auto;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-            margin: 10px 0;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #EBF7FE;
-            color: black;
-        }
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        a {
-            color: #00ba01;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .demo-form{
-            display:none;
-        }
-    </style>";
 
         if ($result->num_rows > 0) {
             echo "<div class='table-container'>";
