@@ -62,79 +62,79 @@ function homePage()
       </div>
     </div>
   </div>
-  <div class="bug-tracking">
-  <div class="table-container">
-    <table>
-      <tr class="table--header">
-        <th style="font-size: 28px; width: 500px">Incoming</th>
-        <th>Bug Status</th>
-        <th>Priority</th>
-        <th>Effort</th>
-        <th>Developer</th>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar1.png" alt="Avatar"></td>
-        <td><span class="stuck">Stuck</span></td>
-        <td><span class="critical">Critical</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar2.png" alt="Avatar"></td>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar4.png" alt="Avatar"></td>
-        <td><span class="working">Working on it</span></td>
-        <td><span class="critical">Critical</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar5.png" alt="Avatar"></td>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar6.png" alt="Avatar"></td>
-        <td><span class="fixed">Closed - Fixed</span></td>
-        <td><span class="high">High</span></td>
-        <td>&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar7.png" alt="Avatar"></td>
-      </tr>
-    </table>
-  </div>
-  <div class="table-container">
-    <table>
-      <tr class="table--header">
-        <th style="font-size: 28px; width: 500px">Resolved</th>
-        <th>Bug Status</th>
-        <th>Priority</th>
-        <th>Effort</th>
-        <th>Developer</th>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar8.png" alt="Avatar"></td>
-        <td><span class="open">Open</span></td>
-        <td><span class="low">Low</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar9.png" alt="Avatar"></td>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar10.png" alt="Avatar"></td>
-        <td><span class="open">Open</span></td>
-        <td><span class="critical">Critical</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar5.png" alt="Avatar"></td>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar5.png" alt="Avatar"></td>
-        <td><span class="working">Working on it</span></td>
-        <td><span class="high">High</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar11.png" alt="Avatar"></td>
-      </tr>
-      <tr class="table--row">
-        <td><img src="avatar13.png" alt="Avatar"></td>
-        <td><span class="fixed">Closed - Fixed</span></td>
-        <td><span class="medium">Medium</span></td>
-        <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-        <td><img src="avatar14.png" alt="Avatar"></td>
-      </tr>
-    </table>
-  </div>
-</div>
 
     ';
 }
+//   <div class="bug-tracking">
+//   <div class="table-container">
+//     <table>
+//       <tr class="table--header">
+//         <th style="font-size: 28px; width: 500px">Incoming</th>
+//         <th>Bug Status</th>
+//         <th>Priority</th>
+//         <th>Effort</th>
+//         <th>Developer</th>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar1.png" alt="Avatar"></td>
+//         <td><span class="stuck">Stuck</span></td>
+//         <td><span class="critical">Critical</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar2.png" alt="Avatar"></td>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar4.png" alt="Avatar"></td>
+//         <td><span class="working">Working on it</span></td>
+//         <td><span class="critical">Critical</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar5.png" alt="Avatar"></td>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar6.png" alt="Avatar"></td>
+//         <td><span class="fixed">Closed - Fixed</span></td>
+//         <td><span class="high">High</span></td>
+//         <td>&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar7.png" alt="Avatar"></td>
+//       </tr>
+//     </table>
+//   </div>
+//   <div class="table-container">
+//     <table>
+//       <tr class="table--header">
+//         <th style="font-size: 28px; width: 500px">Resolved</th>
+//         <th>Bug Status</th>
+//         <th>Priority</th>
+//         <th>Effort</th>
+//         <th>Developer</th>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar8.png" alt="Avatar"></td>
+//         <td><span class="open">Open</span></td>
+//         <td><span class="low">Low</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar9.png" alt="Avatar"></td>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar10.png" alt="Avatar"></td>
+//         <td><span class="open">Open</span></td>
+//         <td><span class="critical">Critical</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar5.png" alt="Avatar"></td>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar5.png" alt="Avatar"></td>
+//         <td><span class="working">Working on it</span></td>
+//         <td><span class="high">High</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar11.png" alt="Avatar"></td>
+//       </tr>
+//       <tr class="table--row">
+//         <td><img src="avatar13.png" alt="Avatar"></td>
+//         <td><span class="fixed">Closed - Fixed</span></td>
+//         <td><span class="medium">Medium</span></td>
+//         <td>&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+//         <td><img src="avatar14.png" alt="Avatar"></td>
+//       </tr>
+//     </table>
+//   </div>
+// </div>
