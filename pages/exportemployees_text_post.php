@@ -35,7 +35,7 @@
 	} 
 	
 	// print out XML that describes the schema
-	echo $output;
+	// echo $output;
 
 	$count = mysqli_num_rows($result);
 	$fields= mysqli_num_fields($result);

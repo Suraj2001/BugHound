@@ -14,7 +14,7 @@ function nav_bar($sess_user_name, $sess_user_level, $selected_tab)
         }
         echo'</div>
             </li>';
-        if ($sess_user_level == 3) {
+        if ($sess_user_level == 4) {
             echo '<li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn, ' . ($selected_tab == "manage_database" ? "active" : "") . '">Manage Database</a>
                 <div class="dropdown-content">

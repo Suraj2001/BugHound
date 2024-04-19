@@ -38,7 +38,7 @@
 	$output .= "\t</database>\n\n"; 
 	
 	// print out XML that describes the schema
-	echo $output;
+	// echo $output;
 
 	// root node
 	$XML = "<result>\n";

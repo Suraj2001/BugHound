@@ -16,7 +16,7 @@ function authUser()
                 </div>
             </div>
             <div class="right">
-                <div class="right-inductor"><img src="../assets/styles/bug.png" alt="bug tracker"></div>
+                <div class="right-inductor"><img src="../assets/images/bug.png" alt="bug tracker"></div>
                 <div class="right-text">
                     <h2>Bughound</h2>
                     <h5>Bug Tracking System</h5>

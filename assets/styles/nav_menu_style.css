@@ -103,6 +103,73 @@ button:hover {
   background-color: #717171;
 }
 
+/* Carousel Styling details*/
+.carousel {
+  position: relative;
+  width: 600px;
+  height: 300px; /* Set a fixed height */
+  overflow: hidden;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide images by default */
+  object-fit: cover; /* This will cover the area, cropping excess parts */
+  object-position: center; /* Center the image in the frame */
+  transition: opacity 0.5s ease;
+}
+
+.carousel-images img.active {
+  display: block; /* Show active image */
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel-indicators span {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.carousel-indicators span.active {
+  background-color: #717171;
+}
+
 
 
 /* Login Card Styling details*/
