@@ -14,7 +14,7 @@ function homePage()
       <div class="square2" data-image="https://images.unsplash.com/photo-1477313372947-d68a7d410e9f?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb">
         <div class="square-container2">
           <div class="align-center"></div>
-          <h3>#1 Front-end Visual Website Builder in 2016</h3>
+          <h3>Click here to manage Programs</h3>
           <div class="button-container"> <!-- Container for the button -->
             <a href="manage_programs.php"><button class="custom-button">Learn More</button></a>
           </div>
@@ -33,7 +33,7 @@ function homePage()
       <div class="square2" data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
         <div class="square-container2">
           <div class="align-center"></div>
-          <h3>The only theme you\'ll ever need. No codding skills needed.</h3>
+          <h3>Click here to manage Functional Areas</h3>
           <div class="button-container"> <!-- Container for the button -->
             <a href="manage_functional_areas.php"><button class="custom-button">Learn More</button></a>
           </div>
@@ -53,7 +53,7 @@ function homePage()
       <div class="square2" data-image="http://titanicthemes.com/files/flipbox/kallyas-wedding.jpg">
         <div class="square-container2">
           <div class="align-center"></div>
-          <h3>The only theme you\'ll ever need. No codding skills needed.</h3>
+          <h3>Click here to manage Employees</h3>
           <div class="button-container"> <!-- Container for the button -->
             <a href="manage_employees.php"><button class="custom-button">Learn More</button></a>
           </div>

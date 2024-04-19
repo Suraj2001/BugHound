@@ -29,6 +29,7 @@
         <a href="search_functional_areas.php?source=edit">Edit a functional area\'s information</a>
         <a href="search_functional_areas.php?source=delete">Delete a functional area</a>
         <a href="search_functional_areas.php?source=search">Search for a functional area</a>
+        <a href="search_functional_areas.php?source=searchProgram">Search Areas for a Program</a>
     </div>';
     } else {
         include "./authentication.php";
