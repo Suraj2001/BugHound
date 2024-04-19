@@ -77,7 +77,6 @@
         </ul>
 
         <h2><center><font color="gray">Edit an Employee Entry</font></center></h2>
-
         <form name="edit_employee_form" action="edit_employee_post.php?emp_id=<?php echo $emp_id; ?>" method="post" onsubmit="return validate(this)">
             <table>
                 <tr><td>First Name:</td><td><input type="Text" name="first_name" value="<?php echo $first_name; ?>" /></td></tr>

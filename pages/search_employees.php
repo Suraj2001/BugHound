@@ -29,7 +29,14 @@
             echo '<font color="gray">Search for an Employee Entry</font>';
         }
         echo "</center></h2>";
-        echo   '
+    } else {
+        include "./authentication.php";
+        echo authUser();
+    }
+    ?>
+    <?php
+    if (isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
+    ?>
         <form name="search_employees_form" action="search_employees_post.php?source=<?php echo $source; ?>" method="post" onsubmit="return validate(this)">
             <table>
                 <tr>
@@ -71,17 +78,10 @@
             </table>
 
             <input type="submit" name="search_reports_submit" value="Search" />
-            <input class="button" type="button" onclick="window.location.replace(\'search_employees.php?source=<?php echo $source; ?>\')" value="Reset" />
-            <input class="button" type="button" onclick="window.location.replace(\'index.php\')" value="Cancel" />
+            <input class="button" type="button" onclick="window.location.replace('search_employees.php?source=<?php echo $source; ?>')" value="Reset" />
+            <input class="button" type="button" onclick="window.location.replace('index.php')" value="Cancel" />
         </form>
-        ';
-    } else {
-        include "./authentication.php";
-        echo authUser();
-    }
-    ?>
-
-
+    <?php } ?>
 
     <script language=Javascript>
         function validate(theform) {

@@ -5,6 +5,9 @@
         <title>Bughound</title>
         <link rel="stylesheet" href="../assets/styles/nav_menu_style.css">
         <link rel="stylesheet" href="../assets/styles/form_style.css">
+        <link rel="stylesheet" href="../assets/styles/table_style.css">
+        <link rel="stylesheet" href="../assets/styles/homepage_style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
     <body>
         <!-- ADD YOUR DB INFO HERE -->
@@ -21,38 +24,11 @@
             if(isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
                 $sess_user_level = $_SESSION['user_level'];
                 $sess_user_name = $_SESSION['user_name'];
+                include "./navigation_bar.php";
+                echo nav_bar($sess_user_name, $sess_user_level, "manage_database");
             }
         ?>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <?php
-                if(isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
-                    echo '<li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Bug Report</a>
-                        <div class="dropdown-content">
-                            <a href="create_report.php">Create</a>
-                            <a href="search_reports.php?source=update">Update</a>
-                            <a href="search_reports.php?source=search">Search</a>
-                        </div>
-                    </li>';
-                    if($sess_user_level == 5) {
-                        echo '<li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn, active">Manage Database</a>
-                        <div class="dropdown-content">
-                            <a href="manage_programs.php">Programs</a>
-                            <a href="manage_functional_areas.php">Functional Areas</a>
-                            <a href="manage_employees.php">Employees</a>
-                            <a href="manage_export.php">Exports</a>
-                        </div>
-                        </li>';
-                        echo '<li style="float:right"><a href="logout.php">Logout</a></li>';
-                        echo '<li style="float:right"><a>Welcome, '.$sess_user_name.'</a></li>';
-                    }
-                } else {
-                    echo '<li style="float:right"><a href="login.php">Login</a></li>';
-                }
-            ?>
-        </ul>
+
 
         <h2>
             <?php

@@ -76,8 +76,17 @@
                 if (!empty($sql)) {
                     $result = $conn->query($sql);
                     echo "<table border=1><th>Area ID</th><th>Area Name</th><th>Program Name</th><th>Release</th><th>Version</th>\n";
-                    while($row = mysqli_fetch_row($result)) {
-                        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>\n";
+                    while($row=mysqli_fetch_row($result)) {
+                        $none=1;
+                        if($source == 'edit') {
+                            printf("<tr><td><a href='edit_functional_area.php?area_id=%d'>%d</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[0],$row[1],$row[2],$row[3],$row[4]);
+                        }
+                        if($source == 'delete') {
+                            printf("<tr><td><a onclick='return confirm_delete(%d);' href='delete_functional_area.php?area_id=%d'>%d</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[0],$row[0],$row[1],$row[2],$row[3],$row[4]);
+                        }
+                        if($source == 'search') {
+                            printf("<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[1],$row[2],$row[3],$row[4]);
+                        }
                     }
                     echo "</table>";
                 } else {
