@@ -28,6 +28,9 @@
     if ($sess_user_level == 3) {
       include "./home_page.php";
       echo homePage();
+    }else{
+      include "./carousal_component.php";
+      echo createCarousal();
     }
   } else {
     include "./authentication.php";
@@ -35,7 +38,7 @@
   }
   ?>
   <?php
-  if (isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
+  if (isset($_SESSION['user_name']) && isset($_SESSION['user_level']) && $_SESSION['user_level'] == 3) {
     $sql = "SELECT b.*, p.program_name, a.area_name FROM bugs AS b 
           LEFT JOIN programs AS p ON b.program_id = p.program_id 
           LEFT JOIN areas AS a ON b.area_id = a.area_id";
