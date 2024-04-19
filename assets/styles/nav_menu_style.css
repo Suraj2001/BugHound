@@ -110,12 +110,13 @@ button:hover {
 .login-card {
   height: 650px;
   width: 900px;
-  margin-top: 4%;
+  margin-top: 10%;
   position: relative;
 }
 
 img {
   width: 100%;
+  height: 100%;
 }
 
 .login_box {
@@ -133,6 +134,7 @@ img {
   width: 41%;
   height: 100%;
   padding: 25px 25px;
+  background-color: #EBF7FE;
 }
 .login_box .right {
   width: 59%;
@@ -235,7 +237,7 @@ img {
   position: absolute;
   background: #fff0;
   left: 50%;
-  margin-top: 30px;
+  margin-top: 60px;
   transform: translate(-50%, 0%);
 }
 .top_link img {

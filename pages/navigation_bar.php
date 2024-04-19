@@ -7,12 +7,14 @@ function nav_bar($sess_user_name, $sess_user_level, $selected_tab)
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn, ' . ($selected_tab == "bug_report" ? "active" : "") . '">Bug Report</a>
                 <div class="dropdown-content">
-                    <a href="create_report.php">Create</a>
-                    <a href="search_reports.php?source=update">Update</a>
-                    <a href="search_reports.php?source=search">Search</a>
-                </div>
+                    <a href="create_report.php">Create</a>';
+        if ($sess_user_level >= 2) {
+            echo'<a href="search_reports.php?source=update">Update</a>
+                    <a href="search_reports.php?source=search">Search</a>';
+        }
+        echo'</div>
             </li>';
-        if ($sess_user_level == 5) {
+        if ($sess_user_level == 3) {
             echo '<li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn, ' . ($selected_tab == "manage_database" ? "active" : "") . '">Manage Database</a>
                 <div class="dropdown-content">

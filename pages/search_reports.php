@@ -13,11 +13,22 @@
     <?php
     // See if user that logged in is of manager level (user level of 5)
     session_start();
-    if (isset($_SESSION['user_name']) && isset($_SESSION['user_level'])) {
+    if (isset($_SESSION['user_name']) && isset($_SESSION['user_level']) && $_SESSION['user_level'] >= 2) {
         $sess_user_level = $_SESSION['user_level'];
         $sess_user_name = $_SESSION['user_name'];
         include "./navigation_bar.php";
         echo nav_bar($sess_user_name, $sess_user_level, "bug_report");
+        echo '<h2>
+            <center>';
+        $source = $_GET['source'];
+        if ($source == 'update') {
+            echo '<font color="gray">Search for a Report to Update Entry</font>';
+        }
+        if ($source == 'search') {
+            echo '<font color="gray">Search for a Report Entry</font>';
+        }
+        echo ' </center>
+            </h2>';
     } else {
         include "./authentication.php";
         echo authUser();
@@ -25,19 +36,7 @@
     ?>
 
 
-    <h2>
-        <center>
-            <?php
-            $source = $_GET['source'];
-            if ($source == 'update') {
-                echo '<font color="gray">Search for a Report to Update Entry</font>';
-            }
-            if ($source == 'search') {
-                echo '<font color="gray">Search for a Report Entry</font>';
-            }
-            ?>
-        </center>
-    </h2>
+
 
     <h2>
         <!-- ADD YOUR DB INFO HERE -->
@@ -62,18 +61,18 @@
 
 
     <?php
-$source = $_GET['source'];
-if ($source == 'update') {
-    // Existing database connection and session management code remains the same
+    $source = $_GET['source'];
+    if ($source == 'update') {
+        // Existing database connection and session management code remains the same
 
-    // Fetch all visible reports
-    $sql = "SELECT b.*, p.program_name, a.area_name FROM bugs AS b 
+        // Fetch all visible reports
+        $sql = "SELECT b.*, p.program_name, a.area_name FROM bugs AS b 
         LEFT JOIN programs AS p ON b.program_id = p.program_id 
         LEFT JOIN areas AS a ON b.area_id = a.area_id";
-    $result = $conn->query($sql);
+        $result = $conn->query($sql);
 
-    // Adding CSS for styling
-    echo "<style>
+        // Adding CSS for styling
+        echo "<style>
         .table-container {
             width: 95%;
             margin: 20px auto;
@@ -111,9 +110,9 @@ if ($source == 'update') {
         }
     </style>";
 
-    if ($result->num_rows > 0) {
-        echo "<div class='table-container'>";
-        echo "<table><thead><tr>
+        if ($result->num_rows > 0) {
+            echo "<div class='table-container'>";
+            echo "<table><thead><tr>
                 <th>Bug Report ID</th><th>Program Name</th><th>Report Type</th>
                 <th>Severity</th><th>Summary</th><th>Is Reproducible</th><th>Problem Description</th>
                 <th>Suggested Fix</th><th>Reported By</th><th>Date Discovered</th><th>Functional Area</th>
@@ -123,8 +122,8 @@ if ($source == 'update') {
                 <th>Comments</th><th>Update</th>
               </tr></thead><tbody>";
 
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr><td><a href='update_report.php?report_id=" . $row['report_id'] . "'>" . $row['report_id'] . "</a></td>
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr><td><a href='update_report.php?report_id=" . $row['report_id'] . "'>" . $row['report_id'] . "</a></td>
                   <td>" . $row['program_name'] . "</td>
                   <td>" . $row['report_type'] . "</td>
                   <td>" . $row['severity'] . "</td>
@@ -149,16 +148,16 @@ if ($source == 'update') {
                   <td>" . $row['comments'] . "</td>
                   <td><a href='update_report.php?report_id=" . $row['report_id'] . "'>Update</a></td>
                   </tr>";
+            }
+            echo "</tbody></table>";
+            echo "</div>"; // Close the div for table-container
+        } else {
+            echo "<h3>No bug reports found.</h3>";
         }
-        echo "</tbody></table>";
-        echo "</div>"; // Close the div for table-container
-    } else {
-        echo "<h3>No bug reports found.</h3>";
-    }
 
-    $conn->close();
-}
-?>
+        $conn->close();
+    }
+    ?>
 
 
 
