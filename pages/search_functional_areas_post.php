@@ -66,41 +66,45 @@
                 if($source == 'search') {
                     echo "<h2>Results for Functional Areas Search\n</h2>";
                 }
+                if($source == 'searchProgram') {
+                    echo "<h2>Areas under the selected Program\n</h2>";
+                }
 
                 $area_name = $_POST['area_name'];
                 $program_name = $_POST['program_name'];
 
                 
                 $sql = "";
-                if($area_name != "" && $program_name === "") {
-                    $sql .= "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE A.area_name = '".$area_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
-                    $previous_selection_exists = true;
-                } else if($area_name === "" && $program_name != "") {
-                    $sql .= "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE P.program_name = '".$program_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
-                } else if($area_name != "" && $program_name != "") {
-                    $sql = "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE A.area_name = '".$area_name."' AND P.program_name = '".$program_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
-                }
-
-                $none = 0;
-                $result = $conn->query($sql);
-
-                echo "<table border=1><th>Area ID</th><th>Area Name</th><th>Program Name</th><th>Release</th><th>Version</th>\n";
-                while($row=mysqli_fetch_row($result)) {
-                    $none=1;
-                    if($source == 'edit') {
-                        printf("<tr><td><a href='edit_functional_area.php?area_id=%d'>%d</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[0],$row[1],$row[2],$row[3],$row[4]);
+                if($source == 'searchProgram' && $program_name !== "") {
+                    // First get the program ID
+                    $program_sql = "SELECT program_id FROM programs WHERE program_name = '".$program_name."'";
+                    $program_result = $conn->query($program_sql);
+                    if($program_row = $program_result->fetch_assoc()) {
+                        $program_id = $program_row['program_id'];
+                        // Now get all areas under this program ID
+                        $sql .= "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A JOIN programs as P ON A.program_id = P.program_id WHERE A.program_id = ".$program_id." AND A.is_visible = 1";
                     }
-                    if($source == 'delete') {
-                        printf("<tr><td><a onclick='return confirm_delete(%d);' href='delete_functional_area.php?area_id=%d'>%d</a></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[0],$row[0],$row[1],$row[2],$row[3],$row[4]);
-                    }
-                    if($source == 'search') {
-                        printf("<tr><td>%d</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n",$row[0],$row[1],$row[2],$row[3],$row[4]);
+                }else{
+                    if($area_name != "" && $program_name === "") {
+                        $sql .= "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE A.area_name = '".$area_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
+                        $previous_selection_exists = true;
+                    } else if($area_name === "" && $program_name != "") {
+                        $sql .= "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE P.program_name = '".$program_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
+                    } else if($area_name != "" && $program_name != "") {
+                        $sql = "SELECT A.area_id, A.area_name, P.program_name, P.program_release, P.program_version FROM areas as A, programs as P WHERE A.area_name = '".$area_name."' AND P.program_name = '".$program_name."' AND A.program_id = P.program_id AND A.is_visible = 1";
                     }
                 }
-                echo "</table>";
                 
-                if($none==0) {
-                    echo "<h3>No matching records found.</h3>\n";
+
+                if (!empty($sql)) {
+                    $result = $conn->query($sql);
+                    echo "<table border=1><th>Area ID</th><th>Area Name</th><th>Program Name</th><th>Release</th><th>Version</th>\n";
+                    while($row = mysqli_fetch_row($result)) {
+                        echo "<tr><td>".$row[0]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>\n";
+                    }
+                    echo "</table>";
+                } else {
+                    echo "<h3>No matching records found or missing program name.</h3>\n";
                 }
 
                 $conn->close();
