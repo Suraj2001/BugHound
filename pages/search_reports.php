@@ -6,7 +6,7 @@
     <title>Bughound</title>
     <link rel="stylesheet" href="../assets/styles/nav_menu_style.css">
     <link rel="stylesheet" href="../assets/styles/form_style.css">
-    <link rel="stylesheet" href="../assets/styles/table_style.css">
+    <!-- <link rel="stylesheet" href="../assets/styles/table_style.css"> -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
@@ -60,6 +60,43 @@
 
 
         if ($result->num_rows > 0) {
+            echo '<style>
+            .table-container {
+                width: 95%;
+                margin: 20px auto;
+                overflow-x: auto;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #fff;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #EBF7FE;
+                color: black;
+            }
+            tr:hover {
+                background-color: #f5f5f5;
+            }
+            a {
+                color: #00ba01;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .demo-form{
+                display:none;
+            }
+            </style>;
+            ';
             echo "<div class='table-container'>";
             echo "<table><thead><tr>
                 <th>Bug Report ID</th><th>Program Name</th><th>Report Type</th>
@@ -107,22 +144,10 @@
         $conn->close();
     }
     ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <form class="demo-form" name="search_reports_form" action="search_reports_post.php?source=<?php echo $source; ?>" method="post" onsubmit="return validate(this)">
+    <?php
+    if ($source == 'search') {
+        ?>
+    <form name="search_reports_form" action="search_reports_post.php?source=<?php echo $source; ?>" method="post" onsubmit="return validate(this)">
         <!-- <form id="s_form" name="search_reports_form" action="search_reports_post.php?source=<?php echo $source; ?>" method="post"> -->
         <table>
             <tr>
@@ -330,7 +355,8 @@
             </tr>
         </table>
     </form>
-
+    <?php
+    } ?>
     <script language=Javascript>
         function validate(theform) {
             if (theform.submitted === "Search") {
