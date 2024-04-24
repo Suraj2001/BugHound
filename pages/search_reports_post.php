@@ -263,7 +263,7 @@
             $row_p = mysqli_fetch_row($result_p);
             $row_a = mysqli_fetch_row($result_a);
             $program_name = $row_p[0];
-            $area_name = $row_a[0];
+            $area_name = "";
 
             $reported_by_id = $row[8];
             $assigned_to_id = $row[11];

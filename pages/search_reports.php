@@ -255,8 +255,8 @@
                 <td>Status:</td>
                 <td>
                     <select name="status">
-                        <option value="default">N/A</option>
-                        <option value="open" selected>Open</option>
+                        <option value="default" selected>N/A</option>
+                        <option value="open">Open</option>
                         <option value="closed">Closed</option>
                         <option value="resolved">Resolved</option>
                     </select>
