@@ -5,6 +5,7 @@
         <title>Bughound</title>
         <link rel="stylesheet" href="../assets/styles/nav_menu_style.css">
         <link rel="stylesheet" href="../assets/styles/form_style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
     <body>
         <!-- ADD YOUR DB INFO HERE -->
